@@ -16,12 +16,7 @@ export const topicsHandler = (ctx: Context) => {
   const item = selectRandomFromList(topics);
   ctx.reply(item, {
     reply_markup: {
-      inline_keyboard: [
-        [
-          { text: "Another Topic", callback_data: "re-topic" },
-          { text: "Back to menu", callback_data: "menu" },
-        ],
-      ],
+      inline_keyboard: [[{ text: "Another Topic", callback_data: "re-topic" }], [{ text: "Back to menu", callback_data: "menu" }]],
     },
   });
 };
