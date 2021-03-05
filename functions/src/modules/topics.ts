@@ -1,6 +1,6 @@
 import Telegraf, { Context } from "telegraf";
 import fs from "fs";
-import { selectRandomFromList } from "../utils/random";
+import { getRandomItemFromList } from "../utils/getRandomItemFromList";
 import { TelegrafContext } from "telegraf/typings/context";
 
 const rawTopics = fs.readFileSync("./src/data/topics.json", "utf-8");
@@ -13,7 +13,7 @@ export const topicModule = (bot: Telegraf<TelegrafContext>) => {
 
 export const topicsHandler = (ctx: Context) => {
   ctx.deleteMessage();
-  const item = selectRandomFromList(topics);
+  const item = getRandomItemFromList(topics);
   ctx.reply(item, {
     reply_markup: {
       inline_keyboard: [[{ text: "Another Topic", callback_data: "re-topic" }], [{ text: "Back to menu", callback_data: "menu" }]],

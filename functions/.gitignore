@@ -10,3 +10,5 @@ node_modules/
 
 .env.development
 .env.production
+
+firebase-debug.log

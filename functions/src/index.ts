@@ -4,7 +4,7 @@ import { Telegraf } from "telegraf";
 import { datingModule } from "./modules/dating";
 import { helpModule } from "./modules/help";
 import { topicModule } from "./modules/topics";
-import { wurModule } from "./modules/wur";
+import { wyrModule } from "./modules/wyr";
 
 const isCloudEnvironment = process.env.GCLOUD_PROJECT;
 if (isCloudEnvironment) {
@@ -22,7 +22,7 @@ const bot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN!);
 helpModule(bot);
 topicModule(bot);
 datingModule(bot);
-wurModule(bot);
+wyrModule(bot);
 
 if (!isCloudEnvironment) {
   bot.launch();

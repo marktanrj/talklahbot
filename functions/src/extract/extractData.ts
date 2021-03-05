@@ -9,8 +9,11 @@ const allLists = fs.readdirSync(dataDirectory);
 const onlyQns = allLists.filter((item) => item.includes("qns"));
 
 export const compiledData: {
-  [x: string]: string[];
+  [x: string]: {
+    [y: string]: string[];
+  };
 } = {};
+
 _.forEach(onlyQns, (fileName) => {
   const rawContents = fs.readFileSync(path.join(dataDirectory, fileName), "utf-8");
   const contents = JSON.parse(rawContents);

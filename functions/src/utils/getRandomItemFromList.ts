@@ -1,6 +1,6 @@
 import * as _ from "lodash";
 
-export const selectRandomFromList = (arr: string[]): string => {
+export const getRandomItemFromList = (arr: string[]): string => {
   const randomItem = _.sample(arr) as string;
   return randomItem;
 };
